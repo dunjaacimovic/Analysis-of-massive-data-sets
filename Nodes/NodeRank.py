@@ -17,17 +17,12 @@ def main():
         matrix[i] = [int(x) for x in input.readline().split()]
 
     q = int(input.readline())
-
-    # queries = np.array([list(map(int, input.readline().split())) for cnt in range(q)])
-    # iterations = [q[1] for q in queries]
-    # maxIterations = max(iterations)
-    # print(maxIterations)
+    
     for cnt in range(q):
         (index, iterations) = map(int, input.readline().split())
         queries.append((index, iterations))
         if iterations > maxIter: 
             maxIter = iterations
-    # print(maxIter)
 
     initRank = (1.0-B) / n
     rank[0] = np.full(n, 1.0/n)

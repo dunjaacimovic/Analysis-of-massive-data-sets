@@ -1,23 +1,12 @@
 import sys
 import numpy as np 
 from collections import defaultdict
-# from sortedcontainers import SortedSet 
-  
-# sorted_set = SortedSet([1, 1, 2, 3, 4]) 
-  
-# # initializing a sorted set using default constructor 
-# sorted_set = SortedSet() 
-  
-# # inserting values one by one 
-# for i in range(5, 0, -1): 
-#     sorted_set.add(i) 
 
 def findNearestBlackNode(visited, openedNodes, dist, nodeColors, adjacencyMatrix, deadEnds):
     
     if (dist > 10 or len(openedNodes) == 0):
         return (-1, -1)
 
-    # next = SortedSet()
     next = set()
     visited.union(openedNodes)
     for node in openedNodes:
@@ -31,8 +20,7 @@ def main():
     input = sys.stdin
 
     (n, e) = map(int, input.readline().split())
-    # print(n, e)
-    nodeColors = []; # 0 is white, 1 is black
+    nodeColors = [];
     adjacencyMatrix = defaultdict(lambda: [])
     deadEnds = []
 
